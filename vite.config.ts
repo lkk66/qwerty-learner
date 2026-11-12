@@ -1,3 +1,4 @@
+import { nceDataPlugin } from './scripts/nce-data-plugin'
 import react from '@vitejs/plugin-react'
 import { promises as fs } from 'fs'
 import { getLastCommit } from 'git-last-commit'
@@ -27,6 +28,7 @@ export default defineConfig(async ({ mode }) => {
           },
         },
       }),
+      nceDataPlugin(path.resolve(__dirname, '../nce-tool/nce-data')),
     ],
     build: {
       minify: true,
@@ -49,6 +51,9 @@ export default defineConfig(async ({ mode }) => {
       modules: {
         localsConvention: 'camelCaseOnly',
       },
+    },
+    server: {
+      port: 8080,
     },
   }
 })

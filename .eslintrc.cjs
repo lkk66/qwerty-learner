@@ -16,7 +16,7 @@ module.exports = {
       parserOptions: { sourceType: 'script' },
     },
     {
-      files: ['vite.config.ts'],
+      files: ['vite.config.ts', 'vite.nce-review.config.ts', 'scripts/*.ts'],
       env: { node: true },
       extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
       parser: '@typescript-eslint/parser',
